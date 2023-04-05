@@ -1,7 +1,7 @@
 version: "3.1"
 services:
   keycloak:
-    image: quay.io/keycloak/keycloak:20.0.2
+    image: quay.io/keycloak/keycloak:18.0.2
     command:
       - start-dev
       - --import-realm
@@ -10,3 +10,5 @@ services:
     environment:
       - KEYCLOAK_ADMIN=admin
       - KEYCLOAK_ADMIN_PASSWORD=admin
+    volumes:
+      - ./config/:/opt/keycloak/data/import/
